@@ -1,0 +1,54 @@
+package product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ProductManager implements ProductInterface {
+	ArrayList<Product> products;
+	ArrayList<Order> orders;
+
+	ProductManager() {
+		products = new ArrayList<>();
+		orders = new ArrayList<>();
+	}
+
+	@Override
+	public void addProduct() {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("Enter product name:");
+		String name = scan.nextLine();
+
+		System.out.println("Enter product price:");
+		int price = scan.nextInt();
+
+		products.add(new Product(name, price));
+		System.out.println("Product added successfully!");
+	}
+
+	}
+
+	@Override
+	public void displayProducts() {
+		// TODO Auto-generated method stub
+		System.out.println("Product List:");
+        for (Product product : products) {
+            System.out.println(product);
+        }
+
+	}
+
+	@Override
+	public void orderProduct() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void displayOrders() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

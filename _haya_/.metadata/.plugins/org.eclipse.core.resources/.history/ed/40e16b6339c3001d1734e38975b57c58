@@ -1,0 +1,9 @@
+package product;
+
+public interface ProductInterface {
+	void addProduct();
+    void displayProducts();
+    void orderProduct();
+    void displayOrders();
+
+}

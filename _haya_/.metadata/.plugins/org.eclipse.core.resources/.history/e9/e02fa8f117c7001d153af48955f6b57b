@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
+public class StreamEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("김");
+		list.add("조");
+		list.add("홍");
+		list.add("토마스");
+		list.add("박");
+		list.add("이");
+		
+		Stream<String> st = list.stream();
+		st.sorted().forEach(s->System.out.println(s));
+
+	}
+
+}

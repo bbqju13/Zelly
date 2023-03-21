@@ -1,0 +1,38 @@
+package 굳3월17일;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.OptionalDouble;
+
+public class LambdaEx02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ArrayList<Integer> intStream = new ArrayList<Integer>();
+		int arr[] = { 1, 2, 3, 4, 5 };
+		long count = Arrays.stream(arr).count();
+		System.out.println(count);
+
+		int sum = Arrays.stream(arr).sum();
+		System.out.println(sum);
+
+		OptionalDouble avg = Arrays.stream(arr).average();
+		System.out.println(avg);
+
+		int a[] = { 58, 78, 68, 89, 94, 81 };
+		int sum1 = 0;
+		for(int i : a) {
+			if(i>=70) {
+				sum1 += i;
+			}
+		}
+		System.out.print("java로만든 sum :"+sum1);
+		System.out.println();
+		
+		int sum2 = Arrays.stream(a).filter(b->b>=70).sum();
+		System.out.println("Arrays로 만든 sum :"+sum2);
+	}
+	
+
+}

@@ -1,0 +1,62 @@
+package 굳3월16일;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		WordBook wb = new WordBook();
+
+		System.out.println("= 단 어 장 =");
+		while (true) {
+			System.out.println("1> 단어 추가");
+			System.out.println("2> 단어 출력");
+			System.out.println("3> 단어 검색");
+			System.out.println("4> 단어 수정");
+			System.out.println("5> 단어 삭제");
+			System.out.println("6> 종료");
+			System.out.println("메뉴를 선택해주세요.");
+
+			int menu = scan.nextInt();
+			scan.nextLine();
+			
+			switch (menu) {
+			case 1:
+				System.out.println("추가할 단어 입력 :");
+				String word = scan.next();
+				System.out.println("단어 뜻 입력 :");
+				String mean = scan.nextLine();
+				wb.addWord(word, mean);
+				break;
+			case 2:
+				wb.printWord();
+				break;
+			case 3:
+				System.out.println("검색할 단어 입력 :");
+				String word1 = scan.next();
+				wb.searchWord(word1);
+				break;
+			case 4:
+				System.out.println("오류 단어 입력 :");
+				String fixword = scan.next();
+				System.out.println("수정할 단어 입력 :");
+				String fixword2 = scan.next();
+				wb.fixWord(fixword, fixword2);
+				break;
+			case 5:
+				System.out.println("삭제할 단어 입력 :");
+				String delete = scan.next();
+				wb.deleteWord(delete);
+				break;
+			case 6:
+				System.out.println("= 종료 =");
+				break;
+			default:
+				System.out.println("= 오류 =");
+			}
+		}
+	}
+
+}

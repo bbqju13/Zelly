@@ -1,0 +1,96 @@
+package product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ProductManager {
+	private ArrayList<Product> productList;
+	private ArrayList<Product> orderList;
+	private ArrayList<String> list1 = new ArrayList<>();
+	private ArrayList<Integer> list2 = new ArrayList<>();
+
+	public ProductManager() {
+		productList = new ArrayList<Product>();
+		orderList = new ArrayList<Product>();
+
+	}
+
+	public void addProduct() {
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("=제품 추가=");
+		System.out.print("번호를 선택하세요: ");
+		int menuNumber = scan.nextInt();
+		scan.nextLine(); // consume the newline character
+
+		String menu = list1.get(menuNumber - 1);
+		int price = list2.get(menuNumber - 1);
+
+		Product newProduct = new Product(menu, price);
+		productList.add(newProduct);
+		orderList.add(newProduct);
+
+		System.out.println("제품 추가됨.");
+	}
+
+	}
+
+	public void printProductList() {
+		System.out.println("=메뉴=");
+		for (int i = 0; i < list1.size(); i++) {
+			System.out.println((i + 1) + ". " + list1.get(i) + ": " + list2.get(i) + " won");
+		}
+
+		System.out.println("=제품 리스트=");
+		for (int i = 0; i < productList.size(); i++) {
+			Product product = productList.get(i);
+			System.out.println((i + 1) + ". " + product.getMenu() + ": " + product.getPrice() + " won");
+		}
+	}
+
+	public void orderProduct(String menu, int count) {
+		for (Product product : productList) {
+			if (product.getMenu().equals(menu)) {
+				Product orderProduct = new Product(menu, product.getPrice() * count);
+				orderList.add(orderProduct);
+				break;
+			}
+		}
+	}
+
+	public void printOrderList() {
+		int totalPrice = 0;
+		for (int i = 0; i < orderList.size(); i++) {
+			Product product = orderList.get(i);
+			System.out.println((i + 1) + "/" + product.getMenu() + " - " + product.getPrice() + "원");
+			totalPrice += product.getPrice();
+		}
+		System.out.println("총금액 : " + totalPrice + " 원");
+	}
+
+	public void printMenu() {
+		System.out.println("=메뉴=");
+		System.out.println("1. 햄버거: 7,000 원");
+		System.out.println("2. 피자: 12,000 원");
+		System.out.println("3. 음료: 2,300 원");
+		System.out.println("4. 과자: 1,200 원");
+		System.out.println("5. 사탕: 500 원");
+		System.out.println("> 메뉴 선택 ");
+	}
+
+	public void add() {
+		// add value to list
+		list1.add("햄버거"); // 0 -> Menu 1
+		list1.add("피자");
+		list1.add("음료수");
+		list1.add("과자");
+		list1.add("사탕");
+
+		list2.add(7000);
+		list2.add(12000);
+		list2.add(2300);
+		list2.add(1200);
+		list2.add(500);
+	}
+
+}

@@ -1,0 +1,13 @@
+package 굳3월17일;
+
+public class LambdaEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public static int add(int x, int y) {
+		return x+y;
+	}
+
+}

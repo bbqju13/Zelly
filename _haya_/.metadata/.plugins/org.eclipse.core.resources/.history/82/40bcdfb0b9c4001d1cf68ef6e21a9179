@@ -1,0 +1,15 @@
+package 굳3월17일;
+
+public class LambdaEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int res = add(3,5);
+		System.out.println(res);
+
+	}
+	public static int add(int x, int y) {
+		return x+y;
+	}
+
+}

@@ -1,0 +1,29 @@
+package product;
+
+public class ProductManager implements ProductInterface {
+
+	@Override
+	public void addProduct() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void displayProducts() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void orderProduct() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void displayOrders() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

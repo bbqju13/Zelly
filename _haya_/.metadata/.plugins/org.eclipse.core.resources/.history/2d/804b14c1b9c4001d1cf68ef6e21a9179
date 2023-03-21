@@ -1,0 +1,19 @@
+package 굳3월17일;
+
+import java.util.ArrayList;
+
+public class LambdaEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int res = add(3,5);
+		System.out.println(res);
+		
+		ArrayList<Integer> num = new ArrayList<Integer>();
+
+	}
+	public static int add(int x, int y) {
+		return x+y;
+	}
+
+}

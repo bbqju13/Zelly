@@ -1,0 +1,47 @@
+package product;
+
+import java.util.Scanner;
+
+public class Mian {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		ProductManager pm = new ProductManager();
+
+		pm.add();
+
+		while (true) {
+			System.out.println("---Main Menu---");
+			System.out.println("1. Add Product");
+			System.out.println("2. View Product List");
+			System.out.println("3. Order Product");
+			System.out.println("4. View Order List");
+			System.out.println("5. Exit");
+			System.out.print("Enter your choice: ");
+			int choice = scan.nextInt();
+			scan.nextLine(); // consume the newline character
+
+			switch (choice) {
+			case 1:
+				pm.addProduct();
+				break;
+			case 2:
+				pm.printProductList();
+				break;
+			case 3:
+				pm.addProduct();
+				break;
+			case 4:
+				pm.printOrderList();
+				break;
+			case 5:
+				System.out.println("Goodbye!");
+				return;
+			default:
+				System.out.println("Invalid choice.");
+				break;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,10 @@
+
+public class 과제4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String arr[]=new String[] {"a", "e", "f"};
+
+	}
+
+}
